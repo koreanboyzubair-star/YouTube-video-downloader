@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050611">
+  <meta name="description" content="BichuxVideo Downloader — a premium anime-style video downloader frontend.">
+  <title>BichuxVideo Downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="BichuxVideo Downloader home">
+      <span class="brand-mark">B</span>
+      <span>Bichux<span>Video</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-cta" href="#downloader">Start Download <span>↗</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><i></i> FAST • SIMPLE • POWERFUL</div>
+        <h1>Bichux<span>Video</span><br><strong>Downloader</strong></h1>
+        <p class="hero-subtitle">Download Your Favorite Videos</p>
+        <p class="platforms"><span>YouTube</span><b>•</b><span>TikTok</span><b>•</b><span>Instagram</span><b>•</b><span>More</span></p>
+
+        <div class="download-card" id="downloader">
+          <form id="downloadForm">
+            <div class="input-wrap">
+              <span class="link-icon">↗</span>
+              <input id="urlInput" type="url" placeholder="Paste your video link here..." autocomplete="off" required>
+              <button class="clear-btn" id="clearBtn" type="button" aria-label="Clear URL">×</button>
+            </div>
+            <div class="settings-row">
+              <label>Format
+                <select id="formatSelect">
+                  <option value="mp4">MP4 Video</option>
+                  <option value="mp3">MP3 Audio</option>
+                  <option value="webm">WebM Video</option>
+                </select>
+              </label>
+              <label>Quality
+                <select id="qualitySelect">
+                  <option>1080p</option>
+                  <option>720p</option>
+                  <option>480p</option>
+                  <option>360p</option>
+                </select>
+              </label>
+              <button class="download-btn" type="submit"><span class="download-icon">↓</span> Download</button>
+            </div>
+          </form>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="trust-row">
+          <span><b>✓</b> No signup required</span>
+          <span><b>⚡</b> Fast processing</span>
+          <span><b>◇</b> Clean experience</span>
+        </div>
+      </div>
+      <div class="scroll-cue"><span></span> Scroll to explore</div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="section-heading">
+        <div class="eyebrow"><i></i> WHY BICHUXVIDEO</div>
+        <h2>Built for <span>speed.</span><br>Designed for creators.</h2>
+        <p>A polished downloader experience with the tools you need, without the clutter.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Paste a link and get straight to the download flow with a clean, focused interface.</p>
+        </article>
+        <article class="feature-card featured-card">
+          <div class="feature-icon">✦</div>
+          <h3>Premium Quality</h3>
+          <p>Choose your preferred format and quality from a modern, responsive control panel.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">◇</div>
+          <h3>Simple & Clean</h3>
+          <p>No distracting dashboards. Just a cinematic interface centered around your link.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="how section" id="how">
+      <div class="section-heading centered">
+        <div class="eyebrow"><i></i> SIMPLE PROCESS</div>
+        <h2>Download in <span>3 steps.</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span>01</span><h3>Copy your link</h3><p>Copy a supported video URL from your favorite platform.</p></div>
+        <div class="step-line"></div>
+        <div class="step"><span>02</span><h3>Choose quality</h3><p>Select MP4, MP3, or WebM and pick your quality.</p></div>
+        <div class="step-line"></div>
+        <div class="step"><span>03</span><h3>Download</h3><p>Hit download and let your connected backend handle the file.</p></div>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq">
+      <div class="section-heading centered">
+        <div class="eyebrow"><i></i> FAQ</div>
+        <h2>Questions? <span>Answered.</span></h2>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Is this frontend ready for GitHub Pages? <b>+</b></summary><p>Yes. The frontend can be hosted separately on GitHub Pages and connected to the BichuxVideo API backend.</p></details>
+        <details><summary>Does the Download button actually download videos? <b>+</b></summary><p>Yes, when the frontend is connected to the backend. The server uses yt-dlp to fetch supported public videos and returns the file to your browser.</p></details>
+        <details><summary>Is the design mobile responsive? <b>+</b></summary><p>Yes. The navigation, hero layout, downloader controls, cards, and typography adapt for phones and tablets.</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta section">
+      <div>
+        <div class="eyebrow"><i></i> READY WHEN YOU ARE</div>
+        <h2>Turn any link into<br><span>your next download.</span></h2>
+      </div>
+      <a href="#downloader" class="outline-btn">Try BichuxVideo <span>↓</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark">B</span><div><strong>BichuxVideo</strong><small>Downloader</small></div></div>
+    <p>© <span id="year"></span> BichuxVideo. Frontend demo.</p>
+    <div class="footer-links"><a href="#features">Features</a><a href="#faq">FAQ</a><a href="#home">Back to top ↑</a></div>
+  </footer>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
